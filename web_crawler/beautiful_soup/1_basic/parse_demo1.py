@@ -31,11 +31,54 @@ print(SEP)
 print("2. Get title attributes of html")
 # <title>The Dormouse's story</title>
 print(soup.title)
+
 # title
 print(soup.title.name)
+
 # The Dormouse's story'
 print(soup.title.string)
+
 # head
 print(soup.title.parent.name)
+
 # html
 print(soup.title.parent.parent.name)
+
+print(SEP)
+
+'''
+    3. Get paragraph attributes of html
+'''
+print("3. Get paragraph attributes of html")
+
+# <p class="title"><b>The Dormouse's story</b></p>
+print(soup.p)
+
+# ['title']
+print(soup.p['class'])
+
+print(SEP)
+
+'''
+    4. Get link attributes of html
+'''
+print("4. Get link attributes of html")
+
+# <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
+print(soup.a)
+
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+print(soup.find_all('a'))
+
+print(SEP)
+
+'''
+    5. Find by id
+'''
+print("5. Find by id")
+
+# <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>
+print(soup.find(id="link3"))
+
