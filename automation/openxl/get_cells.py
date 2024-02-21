@@ -19,3 +19,11 @@ print(sheet.cell(row=1, column=2).value)
 # Go through every other row
 for i in range(1, 8, 2):
     print(i, sheet.cell(row=i, column=2).value)
+
+print("-------------------------------------------------")
+
+# go through all rows and columns
+for i in range(1, sheet.max_row + 1):
+    for j in range(1, sheet.max_column + 1):
+        print(i, j, sheet.cell(row=i, column=j).value)
+
