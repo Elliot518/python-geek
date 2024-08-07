@@ -2,9 +2,8 @@ import requests
 import tkinter as tk
 from tkinter import messagebox
 
-API_KEY = '3c0c888d07222d896240063261'  # 用您自己的Weatherbit API密钥替换
+API_KEY = '3c0c777d076242d896defe4006326661'  # Replace with your Weatherbit API key
 
-# 获取天气数据
 def get_weather_data(city_name):
     url = f"https://api.weatherbit.io/v2.0/current"
     params = {
@@ -21,7 +20,6 @@ def get_weather_data(city_name):
     else:
         return None
 
-# 显示天气信息
 def display_weather(data):
     if data:
         weather_data = data["data"][0]
@@ -33,18 +31,17 @@ def display_weather(data):
     else:
         weather_info.set("Error fetching weather data.")
 
-# 获取天气按钮的点击事件
 def get_weather():
     city = city_entry.get()
     weather_data = get_weather_data(city)
     display_weather(weather_data)
 
-# 创建主GUI窗口
+# Create the main GUI window
 root = tk.Tk()
 root.title("Weather App")
-root.geometry("400x300")  # 设置窗口的初始大小
+root.geometry("400x300")  # Set the initial size of the window
 
-# 创建和配置GUI元素
+# Create and configure GUI elements
 title_label = tk.Label(root, text="Weather App", font=("Helvetica", 18, "bold"))
 title_label.pack(pady=10)
 
@@ -61,5 +58,5 @@ weather_info = tk.StringVar()
 weather_label = tk.Label(root, textvariable=weather_info, font=("Helvetica", 12), justify="left")
 weather_label.pack(pady=10)
 
-# 启动GUI事件循环
+# Start the GUI event loop
 root.mainloop()
